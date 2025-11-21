@@ -1,0 +1,14 @@
+[Unit]
+Description=Webcam Recording System
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/home/pi/recorder
+ExecStart=/usr/bin/python /home/pi/recorder/recorder.py
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
